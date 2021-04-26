@@ -34,6 +34,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 	"github.com/example/blog/app"
+	groupclient "github.com/regen-network/regen-ledger/x/group/client"	
 )
 
 var ChainID string
@@ -119,6 +120,7 @@ func queryCommand() *cobra.Command {
 		rpc.BlockCommand(),
 		authcmd.QueryTxsByEventsCmd(),
 		authcmd.QueryTxCmd(),
+		groupclient.QueryCmd("group"),
 	)
 
 	app.ModuleBasics.AddQueryCommands(cmd)
@@ -147,6 +149,7 @@ func txCommand() *cobra.Command {
 		authcmd.GetDecodeCommand(),
 		flags.LineBreak,
 		vestingcli.GetTxCmd(),
+		groupclient.TxCmd("group"),
 	)
 
 	app.ModuleBasics.AddTxCommands(cmd)

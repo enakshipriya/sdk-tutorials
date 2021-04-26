@@ -84,6 +84,9 @@ import (
 	blogtypes "github.com/example/blog/x/blog/types"
 	tmjson "github.com/tendermint/tendermint/libs/json"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
+	//groupclient "github.com/regen-network/regen-ledger/x/group/client"
+	//groupmodule "github.com/regen-network/regen-ledger/x/group/module"
+	"github.com/regen-network/regen-ledger/x/group"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -216,7 +219,7 @@ func New(
 		minttypes.StoreKey, distrtypes.StoreKey, slashingtypes.StoreKey,
 		govtypes.StoreKey, paramstypes.StoreKey, ibchost.StoreKey, upgradetypes.StoreKey,
 		evidencetypes.StoreKey, ibctransfertypes.StoreKey, capabilitytypes.StoreKey,
-		blogtypes.StoreKey,
+		blogtypes.StoreKey,group.StoreKey,
 		// this line is used by starport scaffolding # stargate/app/storeKey
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey)
